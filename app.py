@@ -38,4 +38,7 @@ def getip():
                 ip_addresses.setdefault(interface_name, []).append(address.address)
     for interface, addresses in ip_addresses.items():
         result_text += f"{interface}: {', '.join(addresses)}\n"
-    return result_text
+    return result_text, 200
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port="8080")
